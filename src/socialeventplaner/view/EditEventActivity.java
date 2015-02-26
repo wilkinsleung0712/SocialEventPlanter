@@ -34,10 +34,10 @@ private final String LOG_TAG = this.getClass().getName();
 		//get date
 		oldDate = this.currentEvent.getEventDate();
 		//connect to the view and set the values on the component.
-		EditText namedEditText = (EditText) this.findViewById(R.id.editText1);
+		EditText namedEditText = (EditText) this.findViewById(R.id.new_event_name);
 		namedEditText.setText(currentEvent.getTitle());
 		
-		DatePicker datePicker = (DatePicker) this.findViewById(R.id.datePicker1);
+		DatePicker datePicker = (DatePicker) this.findViewById(R.id.create_event_datePicker);
 		setDateInDatePicker(datePicker, currentEvent.getEventDate());
 	    setDateButtonFromDate(currentEvent.getEventDate());
 	    
@@ -46,7 +46,7 @@ private final String LOG_TAG = this.getClass().getName();
 	}
 	private void setDateButtonFromDate(Calendar eventDate) {
 		// TODO Auto-generated method stub
-		Button dateButton = (Button) this.findViewById(R.id.button1);
+		Button dateButton = (Button) this.findViewById(R.id.create_event_button);
 		dateButton.setText(java.text.DateFormat.getDateInstance().format(eventDate.getTime()));
 	}
 	
@@ -69,10 +69,10 @@ private final String LOG_TAG = this.getClass().getName();
 	}
 	private void saveData() {
 		// TODO Auto-generated method stub
-		EditText namedEditText = (EditText) this.findViewById(R.id.editText1);
+		EditText namedEditText = (EditText) this.findViewById(R.id.new_event_name);
 		this.currentEvent.setTitle(namedEditText.getText().toString());
 		//set date in model from data picker
-		DatePicker datePicker = (DatePicker) this.findViewById(R.id.datePicker1);
+		DatePicker datePicker = (DatePicker) this.findViewById(R.id.create_event_datePicker);
 		this.currentEvent.setEventDate(this.getdateFromDatePicker(datePicker));
 		// if we change event date then we change model sort order!
 		if(!compareDate(oldDate,currentEvent.getEventDate())){

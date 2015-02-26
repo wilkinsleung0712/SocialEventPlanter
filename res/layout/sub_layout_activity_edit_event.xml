@@ -18,12 +18,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:labelFor="@+id/editText1"
+            android:labelFor="@+id/new_event_name"
             android:text="@string/name_of_event"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <EditText
-            android:id="@id/editText1"
+            android:id="@id/new_event_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -35,32 +35,32 @@
             <requestFocus />
         </EditText>
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/create_event_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/addneweventtext"
             android:layout_alignStart="@+id/addneweventtext" 
-            android:layout_below="@+id/editText1"
+            android:layout_below="@+id/new_event_name"
             android:text="@string/select_date" />
 
         <TimePicker
             android:id="@+id/timePicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/datePicker1"
+            android:layout_below="@+id/create_event_datePicker"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"/>
 
         <DatePicker
             android:layout_marginTop="20dp"
-            android:id="@+id/datePicker1"
+            android:id="@+id/create_event_datePicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/button1"
+            android:layout_alignLeft="@id/create_event_button"
              android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignStart="@id/button1"
-            android:layout_below="@id/button1"
+            android:layout_alignStart="@id/create_event_button"
+            android:layout_below="@id/create_event_button"
              android:spinnersShown="true"
             android:calendarViewShown="false" />
 

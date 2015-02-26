@@ -26,48 +26,52 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="5dp"
-            android:text="Add New Event"
+            android:text="@string/create_new_event_text"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/new_event_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_alignBaseline="@+id/textView2"
             android:layout_alignBottom="@+id/textView2"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/add_new_event_text"
             android:layout_toRightOf="@+id/add_new_event_text"
-            android:ems="10" >
+            android:ems="10"
+            android:hint="@string/create_new_event_hint" >
 
             <requestFocus />
         </EditText>
 
         <TimePicker
-            android:id="@+id/timePicker1"
+            android:id="@+id/create_event_timePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/datePicker1"
+            android:layout_below="@+id/create_event_datePicker"
             android:layout_marginTop="25dp" />
 
         <DatePicker
-            android:id="@+id/datePicker1"
+            android:id="@+id/create_event_datePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/timePicker1"
+            android:layout_alignLeft="@+id/create_event_timePicker"
+            android:layout_alignStart="@+id/create_event_timePicker"
             android:layout_below="@id/textView2"
             android:layout_marginTop="25dp"
             android:calendarViewShown="false"
             android:datePickerMode="spinner" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/create_event_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/create_event_timePicker"
             android:layout_marginTop="25dp"
-            android:layout_below="@+id/timePicker1"
-            android:text="Button" />
+            android:text="@string/create_button_text" />
 
     </RelativeLayout>
 

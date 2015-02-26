@@ -35,7 +35,7 @@ private EventAdapter eventAdapter;
 		// TODO Auto-generated method stub
 		MenuInflater inflater = this.getMenuInflater();
 		inflater.inflate(R.menu.menubar, menu);
-		menu.findItem(R.id.create_new).setIntent(new Intent(this,EditEventActivity.class));
+		menu.findItem(R.id.create_new).setIntent(new Intent(this,AddEventActivity.class));
 		return true;
 	}
 	
