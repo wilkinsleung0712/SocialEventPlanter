@@ -5,9 +5,12 @@ import java.util.List;
 
 
 
+
+
 import com.example.socialeventplaner.R;
 
 import socialeventplaner.controller.EditEventController;
+import socialeventplaner.controller.ViewEventController;
 import socialeventplaner.model.Event;
 import android.app.Activity;
 import android.content.Context;
@@ -26,7 +29,8 @@ public class EventAdapter extends ArrayAdapter<Event>{
 	private static class ViewContentHolder{
 		 private TextView nameEditText;      
 	      private TextView dateText;      
-	      private Button editButton;    
+	      private Button editButton;   
+	      private Button viewButton;
 	}
 	// note that I changed the first param from Context to Activity since
 	   // we need an Activity to startActitivyForResult
@@ -48,7 +52,7 @@ public class EventAdapter extends ArrayAdapter<Event>{
 			holder.nameEditText=(TextView) inflatedView.findViewById(R.id.eventText);
 			holder.dateText=(TextView) inflatedView.findViewById(R.id.dateText);
 			holder.editButton=(Button) inflatedView.findViewById(R.id.editButton);
-			
+			holder.viewButton=(Button) inflatedView.findViewById(R.id.viewButton);
 			//store the holder in the view
 			inflatedView.setTag(holder);
 		}
@@ -59,6 +63,7 @@ public class EventAdapter extends ArrayAdapter<Event>{
 		holder.nameEditText.setText(event.getTitle());
 		holder.dateText.setText(java.text.DateFormat.getDateInstance().format(event.getEventDate().getTime()));
 		holder.editButton.setOnClickListener(new EditEventController(event.getId(),activity));
+		holder.viewButton.setOnClickListener(new ViewEventController(event.getId(),activity));
 		return inflatedView;
 	}
 

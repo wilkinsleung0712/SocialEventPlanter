@@ -20,7 +20,7 @@ public abstract class AbstractEvent implements Event {
 	}
 	
 	public AbstractEvent(String title, Calendar eventDate) {
-		super();
+		this();
 		this.title = title;
 		this.eventDate = eventDate;
 	}
