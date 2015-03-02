@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import socialeventplaner.model.Event;
 import socialeventplaner.model.EventModel;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +27,10 @@ private final String LOG_TAG = this.getClass().getName();
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.sub_layout_activity_edit_event);
-		
+		//enable the app icon as up button.
+				ActionBar actionBar = this.getActionBar();
+				actionBar.setDisplayHomeAsUpEnabled(true);
+				//end of enable the app icon as up button.
 		//set current event attribute to the view
 		String eventId = this.getIntent().getStringExtra(EventModel.EVENT_ID_EXTRA);
 		this.currentEvent=EventModel.getSingletonInstance().getEventforId(eventId);

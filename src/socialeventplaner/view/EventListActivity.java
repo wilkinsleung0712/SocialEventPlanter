@@ -5,8 +5,11 @@ import socialeventplaner.view.model.EventAdapter;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.MotionEventCompat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MotionEvent;
 
 import com.example.socialeventplaner.R;
 
@@ -38,5 +41,7 @@ private EventAdapter eventAdapter;
 		menu.findItem(R.id.create_new).setIntent(new Intent(this,AddEventActivity.class));
 		return true;
 	}
+
+	
 	
 }

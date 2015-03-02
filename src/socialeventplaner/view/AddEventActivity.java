@@ -6,6 +6,7 @@ import socialeventplaner.controller.CreateNewEventController;
 import socialeventplaner.model.Event;
 import socialeventplaner.model.EventModel;
 import socialeventplaner.model.SimpleEvent;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,10 @@ public class AddEventActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.sub_layout_activity_create_event);
+		//enable the app icon as up button.
+				ActionBar actionBar = this.getActionBar();
+				actionBar.setDisplayHomeAsUpEnabled(true);
+				//end of enable the app icon as up button.
 		Button createEventButton = (Button) this.findViewById(R.id.create_event_button);
 		
 		
