@@ -30,7 +30,7 @@
             android:layout_alignTop="@id/addneweventtext"
             android:layout_toRightOf="@id/addneweventtext"
             android:ems="10"
-            android:inputType="text">
+            android:inputType="text" >
 
             <requestFocus />
         </EditText>

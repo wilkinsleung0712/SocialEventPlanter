@@ -9,6 +9,7 @@
 	<string name="select_date">Select Date</string>
 	    <string name="toastSaveMsg">Data Saved</string>
     <string name="toastDateMsg">Date Changed</string>
+    <string name="toastDeleteEventMsg">Event Deleted</string>
     <string name="create_new">+</string>
     <string name="delete_event">DELETE</string>
     <string name="create_button_text">Create</string>

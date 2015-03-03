@@ -21,6 +21,7 @@ private EventAdapter eventAdapter;
 		this.setContentView(R.layout.main_layout);
 		eventAdapter = new EventAdapter(this,0,EventModel.getSingletonInstance().getEventList());
 		this.setListAdapter(eventAdapter);
+		
 	}
 	
 	@Override

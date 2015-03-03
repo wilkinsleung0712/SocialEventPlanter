@@ -11,7 +11,6 @@ import java.util.List;
 import com.example.socialeventplaner.R;
 
 import socialeventplaner.controller.EditEventController;
-import socialeventplaner.controller.SwapTouchListener;
 import socialeventplaner.controller.ViewEventController;
 import socialeventplaner.model.Event;
 import android.app.Activity;
@@ -66,7 +65,6 @@ public class EventAdapter extends ArrayAdapter<Event>{
 		holder.dateText.setText(java.text.DateFormat.getDateInstance().format(event.getEventDate().getTime()));
 		holder.editButton.setOnClickListener(new EditEventController(event.getId(),activity));
 		holder.viewButton.setOnClickListener(new ViewEventController(event.getId(),activity));
-		inflatedView.setOnTouchListener(new SwapTouchListener());
 		
 		
 		return inflatedView;
