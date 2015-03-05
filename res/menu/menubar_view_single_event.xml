@@ -3,6 +3,8 @@
     <item android:title="@+string/delete_event" android:showAsAction="ifRoom" android:icon="@android:drawable/ic_menu_delete" android:id="@+id/view_delete_event">
     </item>
     <item android:title="@+string/save_event" android:showAsAction="ifRoom" android:icon="@android:drawable/ic_menu_save" android:id="@+id/view_save_event">
+        
     </item>
-
+<item android:title="@+id/view_attendees"   android:showAsAction="ifRoom" android:id="@+id/view_attendees_menubar" android:icon="@android:drawable/ic_menu_info"></item>
+    
 </menu>

@@ -11,12 +11,13 @@ public abstract class AbstractEvent implements Event {
 	private Calendar eventDate;
 	private String venue;
 	private String note;
-	private ArrayList<String> attendees;
+	private ArrayList<String> listOfAttendees;
 	
 	public AbstractEvent() {
 		super();
 		// TODO Auto-generated constructor stub
 		id = UUID.randomUUID().toString();
+		listOfAttendees = new ArrayList<>();
 	}
 	
 	public AbstractEvent(String title, Calendar eventDate) {
@@ -70,7 +71,7 @@ public abstract class AbstractEvent implements Event {
 	 */
 	@Override
 	public ArrayList<String> getAttendees() {
-		return attendees;
+		return listOfAttendees;
 	}
 
 	public void setTitle(String title) {
@@ -89,18 +90,36 @@ public abstract class AbstractEvent implements Event {
 		this.note = note;
 	}
 
-	public void setAttendees(ArrayList<String> attendees) {
-		this.attendees = attendees;
+	public void setAttendees(ArrayList<String> listOfAttendees) {
+		this.listOfAttendees = listOfAttendees;
 	}
 
 	@Override
 	public String toString() {
 		return "AbstractEvent [id=" + id + ", title=" + title + ", eventDate="
 				+ eventDate + ", venue=" + venue + ", note=" + note
-				+ ", attendees=" + attendees + "]";
+				+ ", attendees=" + listOfAttendees + "]";
 	}
 
+
+
 	
+	public void addAttendees(String attendee){
+		if (!listOfAttendees.contains(attendee)) {
+			listOfAttendees.add(attendee);
+		}
+	}
+	
+	public void removeAttendees(String attendee){
+		if(listOfAttendees.contains(attendee)){
+			listOfAttendees.remove(attendee);
+		}
+		
+	}
+	
+	public int getNumberOfAttendees(){
+		return this.listOfAttendees.size();
+	}
 	
 	
 }

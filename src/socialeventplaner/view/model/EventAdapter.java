@@ -8,9 +8,11 @@ import java.util.List;
 
 
 
+
 import com.example.socialeventplaner.R;
 
 import socialeventplaner.controller.EditEventController;
+import socialeventplaner.controller.OnLongPressController;
 import socialeventplaner.controller.ViewEventController;
 import socialeventplaner.model.Event;
 import android.app.Activity;
@@ -32,6 +34,7 @@ public class EventAdapter extends ArrayAdapter<Event>{
 	      private TextView dateText;      
 	      private Button editButton;   
 	      private Button viewButton;
+	      private TextView numberOfAttendees;
 	}
 	// note that I changed the first param from Context to Activity since
 	   // we need an Activity to startActitivyForResult
@@ -54,6 +57,7 @@ public class EventAdapter extends ArrayAdapter<Event>{
 			holder.dateText=(TextView) inflatedView.findViewById(R.id.dateText);
 			holder.editButton=(Button) inflatedView.findViewById(R.id.editButton);
 			holder.viewButton=(Button) inflatedView.findViewById(R.id.viewButton);
+			holder.numberOfAttendees=(TextView) inflatedView.findViewById(R.id.number_of_attendees);
 			//store the holder in the view
 			inflatedView.setTag(holder);
 		}
@@ -65,7 +69,9 @@ public class EventAdapter extends ArrayAdapter<Event>{
 		holder.dateText.setText(java.text.DateFormat.getDateInstance().format(event.getEventDate().getTime()));
 		holder.editButton.setOnClickListener(new EditEventController(event.getId(),activity));
 		holder.viewButton.setOnClickListener(new ViewEventController(event.getId(),activity));
-		
+		holder.numberOfAttendees.setText(String.valueOf(event.getNumberOfAttendees()));
+		inflatedView.setLongClickable(true);
+		inflatedView.setOnLongClickListener(new OnLongPressController(activity,event.getId()));
 		
 		return inflatedView;
 	}

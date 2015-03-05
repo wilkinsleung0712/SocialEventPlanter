@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent" >
 
     <Button
         android:id="@+id/editButton"
@@ -48,5 +47,31 @@
         android:layout_marginRight="10dp"
         android:layout_marginEnd="10dp"
         android:text="@string/name_of_viewbutton" />
+
+    <TextView
+        android:id="@+id/attendees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/dateText"
+        android:layout_marginBottom="50dp"
+        android:text="@string/number_of_attendees_text_label"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#00FF00" />
+
+    <TextView
+        android:id="@+id/number_of_attendees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/attendees"
+        android:layout_alignBottom="@+id/attendees"
+        android:layout_marginLeft="14dp"
+         android:layout_marginStart="14dp" 
+        android:layout_toRightOf="@+id/attendees"
+         android:layout_toEndOf="@+id/attendees"
+        android:text="@string/number_of_attendees_text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#00FF00" />
 
 </RelativeLayout>

@@ -18,6 +18,7 @@ public class EventModel {
 	private static EventModel singletonInstance;
 	
 	private EventModel(){
+		
 		for(int i=10;i>=1;i--){
 			Calendar calendar = Calendar.getInstance();
 			calendar.add(Calendar.DAY_OF_MONTH,i);
@@ -56,5 +57,7 @@ public class EventModel {
 		
 		return new ArrayList<Event>(sortedMap.values());
 	}
+
+
 	
 }

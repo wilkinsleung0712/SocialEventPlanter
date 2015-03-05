@@ -16,8 +16,13 @@ public interface Event {
 	public abstract String getNote();
 
 	public abstract ArrayList<String> getAttendees();
+	public abstract int getNumberOfAttendees();
+	public abstract void addAttendees(String attendee);
+	public abstract void removeAttendees(String attendee);
+	
 	
 	public abstract void setTitle(String title);
 	public abstract void setEventDate(Calendar eventDate);
+	
 
 }

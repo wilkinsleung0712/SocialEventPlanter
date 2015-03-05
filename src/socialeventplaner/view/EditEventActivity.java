@@ -32,8 +32,12 @@ public static final int DATE_CHANGED = 1;
 private  final int DIALOG_YES_NO_CONFIRM_DELETE_MESSAGE = 2;
 private final int DIALOG_YES_NO_CONFIRM_SAVE_MESSAGE=3;
 private final String LOG_TAG = this.getClass().getName();
+
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.sub_layout_activity_edit_event);
@@ -59,6 +63,8 @@ private final String LOG_TAG = this.getClass().getName();
 	      
 		
 	}
+
+	
 	private void setDateButtonFromDate(Calendar eventDate) {
 		// TODO Auto-generated method stub
 		Button dateButton = (Button) this.findViewById(R.id.create_event_button);
@@ -145,6 +151,7 @@ protected Calendar getDateFromFields(int year, int monthOfYear,
 		// TODO Auto-generated method stub
 		MenuInflater inflater = this.getMenuInflater();
 		inflater.inflate(R.menu.menubar_view_single_event, menu);
+		
 		//menu.findItem(R.id.view_save_event).setCheckable(false);
 		//menu.findItem(R.id.view_delete_event);
 		

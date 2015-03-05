@@ -15,4 +15,6 @@
     <string name="create_button_text">Create</string>
     <string name="create_new_event_text">Create New Event</string>
     <string name="create_new_event_hint">New Event Name</string>
+    <string name="number_of_attendees_text_label">Attendees:</string>
+     <string name="number_of_attendees_text"></string>
 </resources>
