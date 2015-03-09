@@ -27,7 +27,6 @@ import com.example.socialeventplaner.R;
 public class EditEventActivity extends Activity {
 private Event currentEvent;
 private Calendar oldDate;
-private Activity activity;
 public static final int DATE_CHANGED = 1;
 private  final int DIALOG_YES_NO_CONFIRM_DELETE_MESSAGE = 2;
 private final int DIALOG_YES_NO_CONFIRM_SAVE_MESSAGE=3;
@@ -41,11 +40,10 @@ private final String LOG_TAG = this.getClass().getName();
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.sub_layout_activity_edit_event);
-		this.activity=this;
 		//enable the app icon as up button.
 				ActionBar actionBar = this.getActionBar();
 				actionBar.setDisplayHomeAsUpEnabled(true);
-				//end of enable the app icon as up button.
+		//end of enable the app icon as up button.
 		//set current event attribute to the view
 		String eventId = this.getIntent().getStringExtra(EventModel.EVENT_ID_EXTRA);
 		this.currentEvent=EventModel.getSingletonInstance().getEventforId(eventId);
@@ -170,6 +168,10 @@ protected Calendar getDateFromFields(int year, int monthOfYear,
 		case R.id.view_save_event:
 			this.showDialog(DIALOG_YES_NO_CONFIRM_SAVE_MESSAGE);
 			return true;
+		case R.id.view_attendees:
+			Intent myIntent = new Intent(this,ViewAttendesActivity.class);
+			this.startActivity(myIntent);
+			return true;
 			
 		}
 		return super.onOptionsItemSelected(item);
@@ -190,9 +192,9 @@ protected Calendar getDateFromFields(int year, int monthOfYear,
 									public void onClick(DialogInterface dialog, int which) {
 										// TODO Auto-generated method stub
 										EventModel.getSingletonInstance().deleteEvent(currentEvent);
-										Intent myIntent = new Intent(activity,EventListActivity.class);
+										Intent myIntent = new Intent(EditEventActivity.this,EventListActivity.class);
 										Toast.makeText(EditEventActivity.this, R.string.toastDeleteEventMsg, Toast.LENGTH_LONG).show();
-										activity.startActivityForResult(myIntent, 0);
+										EditEventActivity.this.startActivityForResult(myIntent, 0);
 									}
 								})
 						.setNegativeButton("NO",

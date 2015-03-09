@@ -5,6 +5,6 @@
     <item android:title="@+string/save_event" android:showAsAction="ifRoom" android:icon="@android:drawable/ic_menu_save" android:id="@+id/view_save_event">
         
     </item>
-<item android:title="@+id/view_attendees"   android:showAsAction="ifRoom" android:id="@+id/view_attendees_menubar" android:icon="@android:drawable/ic_menu_info"></item>
+	<item android:title="@+string/view_attendees_menu"   android:showAsAction="ifRoom" android:id="@+id/view_attendees"  android:icon="@android:drawable/ic_menu_info_details"></item>
     
 </menu>
